@@ -2,9 +2,12 @@
  * Created by sandeshkumar on 4/5/16.
  */
 function flattenArray(arr) {
-    //return flatIterative(arr);
-    //return flatRecursive(arr, []);
-    return flatFunctional(arr);
+    if(Array.isArray(arr)) {
+        //return flatIterative(arr);
+        //return flatRecursive(arr, []);
+        return flatFunctional(arr);
+    } 
+    return [];
 }
 
 function flatRecursive(arr, arr2) {
