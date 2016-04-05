@@ -7,7 +7,7 @@ function flattenArray(arr) {
         //return flatRecursive(arr, []);
         return flatFunctional(arr);
     } 
-    return [];
+    return false;
 }
 
 function flatRecursive(arr, arr2) {
