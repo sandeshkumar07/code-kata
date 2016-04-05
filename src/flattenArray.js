@@ -4,8 +4,8 @@
 function flattenArray(arr) {
     if(Array.isArray(arr)) {
         //return flatIterative(arr);
-        //return flatRecursive(arr, []);
-        return flatFunctional(arr);
+        return flatRecursive(arr, []);
+        //return flatFunctional(arr);
     } 
     return false;
 }
@@ -23,24 +23,24 @@ function flatRecursive(arr, arr2) {
 }
 
 function flatIterative(arr) {
-    var flat = [];
+    var flattenedArr = [];
     for (var i = 0; i < arr.length; i++) {
         var el = arr[i];
         if(Array.isArray(el)) {
             for(var j = 0; j < el.length; j++) {
                 var elm = el[j];
-                flat.push(elm);
+                flattenedArr.push(elm);
             }
         } else {
-            flat.push(el);
+            flattenedArr.push(el);
         }
     }
-    return flat;
+    return flattenedArr;
 }
 
 function flatFunctional(arr) {
-    var flattened = arr.reduce(function(memo, el) {
+    var flattenedArr = arr.reduce(function(memo, el) {
         return memo.concat(el);
     }, []);
-    return flattened;
+    return flattenedArr;
 }
